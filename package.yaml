@@ -1,0 +1,46 @@
+name:                euler
+version:             0.1.0.0
+github:              "jchristensen/euler"
+license:             MIT
+author:              "Justin Christensen"
+maintainer:          "wroathe@gmail.com"
+copyright:           "Justin Christensen <wroathe@gmail.com>"
+
+extra-source-files:
+- ./*.md
+
+description: Please see the README on Github at <https://github.com/jchristensen/euler#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+_exe_options: &exe_opts
+    main: Main.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - euler
+
+executables:
+  problem1:
+    <<: *exe_opts
+    source-dirs: app/Problem1
+  problem2:
+    <<: *exe_opts
+    source-dirs: app/Problem2
+
+tests:
+  euler-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - euler
