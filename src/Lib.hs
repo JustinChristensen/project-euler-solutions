@@ -2,11 +2,11 @@ module Lib
     ( sumMultOf3And5
     ) where
 
-isMultOf3And5 :: (Integral i) => i -> Bool
-isMultOf3And5 i = 
-    let eq0 = (==) 0
-        modi = mod i
-    in (eq0 $ modi 3) || (eq0 $ modi 5)
+divides :: (Integral a) => a -> a -> Bool
+divides d n = n `mod` d == 0
+
+multOf3And5 :: (Integral i) => i -> Bool
+multOf3And5 i = 3 `divides` i || 5 `divides` i
 
 sumMultOf3And5 :: (Integral a) => [a] -> a
-sumMultOf3And5 xs = sum $ filter isMultOf3And5 xs
+sumMultOf3And5 xs = sum $ filter multOf3And5 xs
