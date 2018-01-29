@@ -3,7 +3,10 @@
 ## Building
 
 ```bash
+# get stack
 brew cask install haskell-platform
+
+# build
 cd project-euler-solutions/
 stack build
 ```
