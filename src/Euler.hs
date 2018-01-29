@@ -1,5 +1,7 @@
-module Lib
-    ( sumMultOf3And5
+module Euler
+    (divides
+    ,multOf3And5
+    ,sumMultOf3And5
     ) where
 
 divides :: (Integral a) => a -> a -> Bool

@@ -1,6 +1,6 @@
 module Main where
 
-import Lib (sumMultOf3And5)
+import Euler (sumMultOf3And5)
 
 main :: IO ()
 main = 

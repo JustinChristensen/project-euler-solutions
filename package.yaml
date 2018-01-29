@@ -17,14 +17,17 @@ dependencies:
 library:
   source-dirs: src
 
+_ghc_options: &ghc_opts
+  ghc-options:
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+
 _exe_options: &exe_opts
-    main: Main.hs
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - euler
+  <<: *ghc_opts
+  main: Main.hs
+  dependencies:
+  - euler
 
 executables:
   problem1:
@@ -36,11 +39,9 @@ executables:
 
 tests:
   euler-test:
-    main:                Spec.hs
+    <<: *ghc_opts
+    main:                EulerSpec.hs
     source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
     dependencies:
     - euler
+    - hspec
