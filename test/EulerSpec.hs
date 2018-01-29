@@ -16,5 +16,8 @@ main = hspec $ do
     describe "Euler.sumMultOf3And5" $ do
         it "should sum the multiples of 3 or 5 in a list" $ do
             (sumMultOf3And5 [1..9]) `shouldBe` 23
+    describe "Euler.sumEvenFibonacci" $ do
+        it "should sum even fibonacci numbers below 15" $ do
+            (sumEvenFibonacci (< 15)) `shouldBe` 10
 
             

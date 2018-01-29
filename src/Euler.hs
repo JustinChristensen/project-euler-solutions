@@ -2,6 +2,7 @@ module Euler
     (divides
     ,multOf3And5
     ,sumMultOf3And5
+    ,sumEvenFibonacci
     ) where
 
 divides :: (Integral a) => a -> a -> Bool
@@ -12,3 +13,9 @@ multOf3And5 i = 3 `divides` i || 5 `divides` i
 
 sumMultOf3And5 :: (Integral a) => [a] -> a
 sumMultOf3And5 xs = sum $ filter multOf3And5 xs
+
+fibs :: (Num a) => [a]
+fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
+
+sumEvenFibonacci :: (Integral a) => (a -> Bool) -> a
+sumEvenFibonacci continue = sum $ takeWhile continue $ filter even fibs 
