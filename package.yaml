@@ -16,6 +16,8 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies: 
+    - arithmoi
 
 _ghc_options: &ghc_opts
   ghc-options:
@@ -36,9 +38,12 @@ executables:
   problem2:
     <<: *exe_opts
     source-dirs: app/Problem2
+  problem3:
+    <<: *exe_opts
+    source-dirs: app/Problem3
 
 tests:
-  euler-test:
+  spec:
     <<: *ghc_opts
     main:                EulerSpec.hs
     source-dirs:         test

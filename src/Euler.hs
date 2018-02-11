@@ -1,9 +1,13 @@
-module Euler
-    (divides
-    ,multOf3And5
-    ,sumMultOf3And5
-    ,sumEvenFibonacci
+module Euler (
+    divides,
+    multOf3And5,
+    sumMultOf3And5,
+    sumEvenFibonacci,
+    largestPrimeFactor
     ) where
+
+-- Yes, I'm aware this is cheating
+import Math.NumberTheory.Primes.Factorisation
 
 divides :: (Integral a) => a -> a -> Bool
 divides d n = n `mod` d == 0
@@ -19,3 +23,6 @@ fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 
 sumEvenFibonacci :: (Integral a) => (a -> Bool) -> a
 sumEvenFibonacci continue = sum $ takeWhile continue $ filter even fibs 
+
+largestPrimeFactor :: Integer -> Integer
+largestPrimeFactor n = fst $ last $ factorise n

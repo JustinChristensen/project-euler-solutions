@@ -15,9 +15,12 @@ main = hspec $ do
             11 `shouldNotSatisfy` multOf3And5
     describe "Euler.sumMultOf3And5" $ do
         it "should sum the multiples of 3 or 5 in a list" $ do
-            (sumMultOf3And5 [1..9]) `shouldBe` 23
+            sumMultOf3And5 [1..9] `shouldBe` 23
     describe "Euler.sumEvenFibonacci" $ do
         it "should sum even fibonacci numbers below 15" $ do
-            (sumEvenFibonacci (< 15)) `shouldBe` 10
+            sumEvenFibonacci (< 15) `shouldBe` 10
+    describe "Euler.largestPrimeFactor" $ do
+        it "should find the largest prime factor of 13195" $ do
+            largestPrimeFactor 13195 `shouldBe` 29
 
             
