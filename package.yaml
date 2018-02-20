@@ -1,5 +1,5 @@
 name:                euler
-version:             0.1.0.0
+version:             1.0.0
 github:              "jchristensen/euler"
 license:             MIT
 author:              "Justin Christensen"
@@ -41,6 +41,9 @@ executables:
   problem3:
     <<: *exe_opts
     source-dirs: app/Problem3
+  problem4:
+    <<: *exe_opts
+    source-dirs: app/Problem4
 
 tests:
   spec:
@@ -50,3 +53,12 @@ tests:
     dependencies:
     - euler
     - hspec
+
+benchmarks:
+  palindromes:
+    <<: *ghc_opts
+    main:                Palindromes.hs
+    source-dirs:         bench
+    dependencies:
+    - euler
+    - criterion

@@ -22,5 +22,26 @@ main = hspec $ do
     describe "Euler.largestPrimeFactor" $ do
         it "should find the largest prime factor of 13195" $ do
             largestPrimeFactor 13195 `shouldBe` 29
+    describe "Euler.countDigits" $ do
+        it "should count the number of digits in an integer" $ do
+            countDigits 12345 `shouldBe` 5
+            countDigits (-123) `shouldBe` 3
+            countDigits 0 `shouldBe` 1
+    describe "Euler.numReversal" $ do
+        it "should reverse an integer" $ do
+            numReversal 123 `shouldBe` 321
+            numReversal (-532) `shouldBe` (-235)
+            numReversal 0 `shouldBe` 0
+    describe "Euler.isPalindrome" $ do
+        it "should detect palindromic numbers" $ do
+            121 `shouldSatisfy` isPalindrome
+            1135 `shouldNotSatisfy` isPalindrome
+    describe "Euler.decrProductListFrom" $ do
+        it "should generate a list of products" $ do
+            decrProductListFrom 3 `shouldBe` [9,6,6,4,3,3,2,2,1]
+    describe "Euler.largestPalindromeFromProduct" $ do
+        it "should find the largest palindrome from the product of two two-digit numbers" $ do
+            largestPalindromeFromProduct 99 `shouldBe` 9009
+
 
             
