@@ -42,6 +42,13 @@ main = hspec $ do
     describe "Euler.largestPalindromeFromProduct" $ do
         it "should find the largest palindrome from the product of two two-digit numbers" $ do
             largestPalindromeFromProduct 99 `shouldBe` 9009
+    describe "Euler.allDivides" $ do
+        it "should test that a list of numbers divides a number evenly" $ do
+            2520 `shouldSatisfy` (allDivides [1..10])
+            2521 `shouldNotSatisfy` (allDivides [1..10])
+    describe "Euler.findAllDivides" $ do
+        it "should find a number divisible by a list of numbers" $ do
+            findAllDivides 10 `shouldBe` Just 2520
 
 
             

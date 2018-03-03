@@ -9,7 +9,9 @@ module Euler (
     isPalindrome,
     palindromes,
     decrProductListFrom,
-    largestPalindromeFromProduct
+    largestPalindromeFromProduct,
+    allDivides,
+    findAllDivides
 ) where
 
 -- Yes, I'm aware this is cheating
@@ -74,5 +76,8 @@ decrProductListFrom i =
 largestPalindromeFromProduct :: (Show a, Integral a) => a -> a
 largestPalindromeFromProduct i = head $ filter isPalindrome $ decrProductListFrom i
 
+allDivides :: (Foldable t, Integral a) => t a -> a -> Bool
+allDivides divs i = all (`divides` i) divs
 
-
+findAllDivides :: (Integral a) => a -> Maybe a
+findAllDivides i = find (allDivides [1..i]) [1..]

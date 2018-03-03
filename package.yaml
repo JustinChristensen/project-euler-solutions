@@ -44,6 +44,9 @@ executables:
   problem4:
     <<: *exe_opts
     source-dirs: app/Problem4
+  problem5:
+    <<: *exe_opts
+    source-dirs: app/Problem5
 
 tests:
   spec:
