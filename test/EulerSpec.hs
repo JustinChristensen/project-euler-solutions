@@ -49,6 +49,9 @@ main = hspec $ do
     describe "Euler.findAllDivides" $ do
         it "should find a number divisible by a list of numbers" $ do
             findAllDivides 10 `shouldBe` Just 2520
+    describe "Euler.sumSquareDiff" $ do
+        it "should print the difference between the square of sums and sum of squares" $ do
+            sumSquareDiff 10 `shouldBe` 2640
 
 
             

@@ -11,7 +11,8 @@ module Euler (
     decrProductListFrom,
     largestPalindromeFromProduct,
     allDivides,
-    findAllDivides
+    findAllDivides,
+    sumSquareDiff
 ) where
 
 -- Yes, I'm aware this is cheating
@@ -81,3 +82,6 @@ allDivides divs i = all (`divides` i) divs
 
 findAllDivides :: (Integral a) => a -> Maybe a
 findAllDivides i = find (allDivides [1..i]) [1..]
+
+sumSquareDiff :: (Integral a) => a -> a
+sumSquareDiff i = sum [1..i] ^ 2 - (sum $ map (^ 2) [1..i])
