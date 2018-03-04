@@ -50,6 +50,11 @@ executables:
   problem6:
     <<: *exe_opts
     source-dirs: app/Problem6
+  problem7:
+    <<: *exe_opts
+    source-dirs: app/Problem7
+    dependencies:
+      - arithmoi
 
 tests:
   spec:
