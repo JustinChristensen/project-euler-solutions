@@ -52,6 +52,18 @@ main = hspec $ do
     describe "Euler.sumSquareDiff" $ do
         it "should print the difference between the square of sums and sum of squares" $ do
             sumSquareDiff 10 `shouldBe` 2640
-
-
+    describe "Euler.nDigits" $ do
+        it "should return a series of all of the n digit numbers in another number" $ do
+            nDigits 1 4355 `shouldBe` [5, 5, 3, 4]
+            nDigits 1 1010 `shouldBe` [0, 1, 0, 1]
+            nDigits 2 4355 `shouldBe` [55, 35, 43]
+            nDigits 4 thousandDigitNumber `shouldSatisfy` elem 9989
+    describe "Euler.containsZero" $ do
+        it "should test whether or not a number contains zero" $ do
+            10101 `shouldSatisfy` containsZero
+            1111 `shouldNotSatisfy` containsZero
+    describe "Euler.filterContainsZero" $ do
+        it "should remove numbers containing zero" $ do
+            filterContainsZero [10101, 1111] `shouldBe` [1111]
+            filterContainsZero [] `shouldBe` []
             

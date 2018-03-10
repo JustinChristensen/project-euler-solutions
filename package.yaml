@@ -55,6 +55,9 @@ executables:
     source-dirs: app/Problem7
     dependencies:
       - arithmoi
+  problem8:
+    <<: *exe_opts
+    source-dirs: app/Problem8
 
 tests:
   spec:
